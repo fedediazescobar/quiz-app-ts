@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import QuestionCard from './components/QuestionCard'
 import { fetchQuizQuestions, Difficulty, QuestionsState } from './API'
-
+import { GlobalStyle, Wrapper } from './App.style'
  const TOTAL_QUESTIONS = 10;
 
  export type AnswerObject = {
@@ -72,7 +72,9 @@ import { fetchQuizQuestions, Difficulty, QuestionsState } from './API'
   }
 
   return (
-    <div >
+    <React.Fragment >
+    <GlobalStyle  />
+    <Wrapper >
         <h1>REACT  QUIZ</h1> 
         { gameOver || userAnswers.length === TOTAL_QUESTIONS 
             ? <button 
@@ -105,7 +107,9 @@ import { fetchQuizQuestions, Difficulty, QuestionsState } from './API'
                Next Question
             </button>)
         : null }
-    </div>
+
+    </Wrapper>
+    </React.Fragment>
   );
 }
 
